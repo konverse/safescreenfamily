@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Your Kid's Phone Safe? Free 2-Minute Audit | SafeScreenFamily</title>
+<meta name="description" content="Take this free 2-minute phone safety audit to find out if your child's phone is properly secured. Get personalized fix-it steps for every gap.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Is Your Kid's Phone Safe? Take the 2-Minute Audit">
+<meta property="og:description" content="10 quick questions. Instant score. Step-by-step fixes for every gap. Free tool from SafeScreenFamily.">
+<meta property="og:image" content="https://konverse.github.io/images/og-default.png">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Is Your Kid's Phone Safe? Take the 2-Minute Audit">
+<meta property="twitter:description" content="10 quick questions. Instant score. Step-by-step fixes for every gap. Free tool from SafeScreenFamily.">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">&#x1F6E1;</text></svg>'>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1B2A4A;
+  --navy-light: #2C3E6B;
+  --green: #2E7D5B;
+  --green-light: #3A9E73;
+  --green-dark: #1F5C40;
+  --bg: #FFFFFF;
+  --bg-alt: #F5F8F5;
+  --text: #2D3748;
+  --text-light: #5A6577;
+  --text-muted: #8896A6;
+  --border: #E2E8F0;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(27, 42, 74, 0.08);
+  --shadow-lg: 0 8px 30px rgba(27, 42, 74, 0.12);
+  --red: #DC3545;
+  --red-bg: #FFF5F5;
+  --orange: #E67E22;
+  --orange-bg: #FFFAF0;
+  --green-bg: #F0FFF4;
+  --gold: #D4A017;
+  --gold-bg: #FFFFF0;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg-alt);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+.site-header {
+  background: var(--navy);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(27, 42, 74, 0.15);
+}
+.site-header .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.15rem;
+}
+.site-logo .logo-icon { font-size: 1.4rem; }
+.site-logo .logo-text { color: rgba(255,255,255,0.85); }
+.site-logo .logo-text strong { color: #fff; }
+.header-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.header-link:hover { color: #fff; }
+
+/* --- Layout --- */
+.container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+.audit-wrapper {
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  margin: 2rem auto;
+  max-width: 720px;
+  overflow: hidden;
+}
+
+/* --- Progress Bar --- */
+.progress-container {
+  background: var(--border);
+  height: 6px;
+  width: 100%;
+  position: relative;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  width: 0%;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 3px 3px 0;
+}
+
+/* --- Intro Screen --- */
+.screen {
+  padding: 2.5rem 2rem;
+  display: none;
+  animation: fadeSlideIn 0.35s ease-out;
+}
+.screen.active { display: block; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-screen { text-align: center; padding: 3rem 2rem; }
+.intro-screen h1 {
+  font-size: 1.85rem;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+.intro-screen .subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.intro-screen .time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+.trust-signals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.trust-signals span { display: flex; align-items: center; gap: 0.3rem; }
+
+/* --- Question Screen --- */
+.question-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.question-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.question-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.why-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+}
+.why-toggle:hover { border-color: var(--green); color: var(--green); }
+.why-toggle .arrow {
+  transition: transform 0.2s;
+  font-size: 0.7rem;
+}
+.why-toggle.open .arrow { transform: rotate(180deg); }
+.why-explanation {
+  background: var(--bg-alt);
+  border-left: 3px solid var(--green);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  display: none;
+}
+.why-explanation.visible { display: block; animation: fadeSlideIn 0.25s ease-out; }
+
+.answer-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.answer-btn {
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text);
+  font-family: inherit;
+}
+.answer-btn:hover {
+  border-color: var(--green);
+  background: var(--green-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 125, 91, 0.15);
+}
+.answer-btn:active { transform: translateY(0); }
+.answer-btn.yes:hover { border-color: var(--green); color: var(--green-dark); }
+.answer-btn.no:hover { border-color: var(--orange); background: var(--orange-bg); color: #c0392b; }
+
+/* --- Results Screen --- */
+.results-screen { padding: 2.5rem 2rem; text-align: center; }
+
+.score-display { margin-bottom: 2rem; }
+.score-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  position: relative;
+}
+.score-circle .number {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.score-circle .out-of {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.score-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.score-subtitle {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.score-critical .score-circle { background: var(--red-bg); border: 3px solid var(--red); color: var(--red); }
+.score-critical .score-label { color: var(--red); }
+
+.score-needs-work .score-circle { background: var(--orange-bg); border: 3px solid var(--orange); color: var(--orange); }
+.score-needs-work .score-label { color: var(--orange); }
+
+.score-good .score-circle { background: var(--green-bg); border: 3px solid var(--green); color: var(--green); }
+.score-good .score-label { color: var(--green); }
+
+.score-perfect .score-circle { background: var(--gold-bg); border: 3px solid var(--gold); color: var(--gold); }
+.score-perfect .score-label { color: var(--gold); }
+
+/* --- Fix Cards --- */
+.fixes-section {
+  text-align: left;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+.fixes-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.fix-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s;
+}
+.fix-card:hover { box-shadow: var(--shadow); }
+.fix-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+.fix-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--red-bg);
+  border: 1.5px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--red);
+  font-weight: 700;
+}
+.fix-question { font-weight: 600; color: var(--navy); font-size: 0.95rem; flex: 1; }
+.fix-expand {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+  margin-top: 0.2rem;
+}
+.fix-card.open .fix-expand { transform: rotate(180deg); }
+.fix-steps {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.fix-card.open .fix-steps { display: block; animation: fadeSlideIn 0.25s ease-out; }
+.fix-steps ol {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.fix-steps ol li { margin-bottom: 0.6rem; line-height: 1.55; }
+.fix-steps ol li strong { color: var(--text); }
+.fix-platform {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.all-good-msg {
+  background: var(--green-bg);
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.all-good-msg p { color: var(--green-dark); font-weight: 500; }
+
+/* --- Action Buttons --- */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  min-width: 260px;
+  text-align: center;
+}
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(46, 125, 91, 0.3);
+}
+.btn-secondary {
+  background: var(--bg);
+  color: var(--navy);
+  border: 2px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--navy-light);
+  background: var(--bg-alt);
+}
+.btn-share {
+  background: var(--navy);
+  color: #fff;
+}
+.btn-share:hover {
+  background: var(--navy-light);
+  transform: translateY(-1px);
+}
+.btn-restart {
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  min-width: auto;
+  padding: 0.5rem 1rem;
+}
+.btn-restart:hover { color: var(--text); }
+
+.copied-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 200;
+  box-shadow: var(--shadow-lg);
+}
+.copied-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* --- Footer --- */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.site-footer a {
+  color: var(--green);
+  text-decoration: none;
+}
+.site-footer a:hover { color: var(--green-dark); }
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .intro-screen h1 { font-size: 1.5rem; }
+  .question-text { font-size: 1.15rem; }
+  .screen { padding: 2rem 1.25rem; }
+  .intro-screen { padding: 2.5rem 1.25rem; }
+  .results-screen { padding: 2rem 1.25rem; }
+  .answer-buttons { grid-template-columns: 1fr; }
+  .trust-signals { gap: 0.75rem; }
+  .score-circle { width: 120px; height: 120px; }
+  .score-circle .number { font-size: 2.5rem; }
+  .btn { min-width: 100%; }
+  .audit-wrapper { margin: 1rem; border-radius: 10px; }
+}
+
+/* Accessibility */
+.answer-btn:focus-visible,
+.btn:focus-visible,
+.why-toggle:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 2px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/safescreenfamily/" class="site-logo">
+      <span class="logo-icon">&#x1F6E1;</span>
+      <span class="logo-text">SafeScreen<strong>Family</strong></span>
+    </a>
+    <a href="/safescreenfamily/blog/" class="header-link">Back to Blog</a>
+  </div>
+</header>
+
+<main>
+  <div class="audit-wrapper" role="main">
+    <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Audit progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- INTRO SCREEN -->
+    <div class="screen intro-screen active" id="introScreen">
+      <h1>Is Your Kid's Phone Safe?</h1>
+      <p class="subtitle">Take the 2-Minute Audit</p>
+      <div class="time-badge">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        10 questions &middot; ~2 minutes
+      </div>
+      <div class="trust-signals">
+        <span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No data collected
+        </span>
+        <span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          Instant results
+        </span>
+        <span>
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          Step-by-step fixes
+        </span>
+      </div>
+      <button class="btn btn-primary" onclick="startAudit()" id="startBtn">
+        Start the Audit
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <!-- QUESTION SCREENS (generated by JS) -->
+    <div id="questionContainer"></div>
+
+    <!-- RESULTS SCREEN -->
+    <div class="screen results-screen" id="resultsScreen"></div>
+  </div>
+</main>
+
+<div class="copied-toast" id="copiedToast">Copied to clipboard!</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 <a href="/safescreenfamily/">SafeScreenFamily</a>. All rights reserved.</p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  var questions = [
+    {
+      q: "Does your child's phone have a screen time limit set up?",
+      why: "Without enforced limits, kids average 7+ hours of daily screen time. Built-in tools like Apple Screen Time or Google Family Link let you set daily caps and downtime schedules, reducing compulsive use and protecting sleep.",
+      fix: {
+        title: "Set up screen time limits",
+        steps: [
+          '<span class="fix-platform">iPhone</span> Go to <strong>Settings > Screen Time > App Limits</strong>. Tap "Add Limit," select categories or specific apps, and set a daily time allowance.',
+          '<span class="fix-platform">Android</span> Open <strong>Settings > Digital Wellbeing > Dashboard</strong>. Tap any app to set a daily timer. For younger kids, use <strong>Google Family Link</strong> for remote management.',
+          'Set a <strong>Downtime</strong> schedule (e.g., 8 PM to 7 AM) so the phone automatically locks non-essential apps at bedtime.',
+          'Use a <strong>Screen Time passcode</strong> that your child does not know, so limits cannot be overridden.'
+        ]
+      }
+    },
+    {
+      q: "Are app downloads restricted or require your approval?",
+      why: "Unrestricted app downloads let children install social media, dating apps, or games with predatory in-app purchases without your knowledge. Approval requirements give you a checkpoint before anything new lands on the device.",
+      fix: {
+        title: "Require approval for app installs",
+        steps: [
+          '<span class="fix-platform">iPhone</span> Go to <strong>Settings > Screen Time > Content & Privacy Restrictions > iTunes & App Store Purchases</strong>. Set "Installing Apps" to <strong>Don\'t Allow</strong> or enable <strong>Ask to Buy</strong> in Family Sharing.',
+          '<span class="fix-platform">Android</span> Open <strong>Google Family Link > Controls > Google Play</strong>. Turn on <strong>Require approval for</strong> all content.',
+          'Review the <strong>existing apps</strong> already installed. Remove any you do not recognize or that are age-inappropriate.',
+          'Check monthly: kids share workarounds quickly, so verify the setting is still active.'
+        ]
+      }
+    },
+    {
+      q: "Is location sharing turned off for non-essential apps?",
+      why: "Many apps request location access they do not need. Each one that has it can track your child's movements, and data brokers can purchase this information. Limiting location access to maps and safety apps reduces exposure significantly.",
+      fix: {
+        title: "Audit and restrict location permissions",
+        steps: [
+          '<span class="fix-platform">iPhone</span> Go to <strong>Settings > Privacy & Security > Location Services</strong>. Review every app. Set non-essential apps to <strong>Never</strong>. For social media, always choose <strong>Never</strong>.',
+          '<span class="fix-platform">Android</span> Go to <strong>Settings > Location > App location permissions</strong>. For each app, choose <strong>Don\'t allow</strong> unless there is a clear reason (maps, family safety apps).',
+          'Turn off <strong>Precise Location</strong> for any app that does not need exact coordinates (most social media only needs approximate location, if any).',
+          'Disable <strong>location tags on photos</strong> by turning off location access for the Camera app, preventing geotagged images from being shared online.'
+        ]
+      }
+    },
+    {
+      q: "Are DMs restricted to friends-only on social media?",
+      why: "Open DMs are the number one vector for predatory contact. Restricting messages to approved friends means strangers cannot initiate private conversations with your child. This single setting blocks the majority of grooming attempts.",
+      fix: {
+        title: "Lock down direct messages on every platform",
+        steps: [
+          '<span class="fix-platform">Instagram</span> Go to <strong>Settings > Privacy > Messages</strong>. Under "Others on Instagram," select <strong>Don\'t receive requests</strong>. Enable <strong>Hidden Words</strong> to auto-filter offensive messages.',
+          '<span class="fix-platform">TikTok</span> Go to <strong>Settings > Privacy > Direct Messages</strong> and set to <strong>No One</strong> or <strong>Friends</strong>. For under-16 accounts, DMs are off by default, but verify this.',
+          '<span class="fix-platform">Snapchat</span> Go to <strong>Settings > Contact Me</strong> and set to <strong>My Friends</strong>. Also set "View My Story" to <strong>Friends Only</strong>.',
+          'Repeat for <strong>every messaging-capable app</strong> including gaming platforms (Roblox, Discord, Fortnite). Check each one individually.'
+        ]
+      }
+    },
+    {
+      q: "Does the phone charge outside the bedroom at night?",
+      why: "Having a phone in the bedroom after lights-out is linked to sleep loss, anxiety, and unsupervised late-night social media use. A charging station in a common area removes temptation and creates a natural boundary, improving sleep quality by an average of 21 minutes per night according to published research.",
+      fix: {
+        title: "Create an overnight charging station",
+        steps: [
+          'Designate a <strong>family charging spot</strong> in a common area (kitchen counter, hallway table) where all devices charge overnight, including yours.',
+          'Set a clear <strong>device curfew time</strong> (e.g., 30 minutes before bedtime) when phones go to the charging station. Making this a family-wide rule reduces pushback.',
+          'Buy an inexpensive <strong>multi-device charging station</strong> or power strip to make it easy and organized.',
+          'If your child says they need the phone as an alarm clock, buy a <strong>$10 alarm clock</strong>. It is the most cost-effective sleep improvement you can make.'
+        ]
+      }
+    },
+    {
+      q: "Have you reviewed the installed apps in the last 30 days?",
+      why: "Kids install and delete apps constantly. Hidden vault apps disguise themselves as calculators or utilities to hide photos and conversations. Regular audits help you catch risky apps, unused subscriptions, and apps your child may have outgrown.",
+      fix: {
+        title: "Do a monthly app audit",
+        steps: [
+          '<span class="fix-platform">iPhone</span> Open <strong>Settings > General > iPhone Storage</strong>. This shows every installed app sorted by size and last-used date. Look for apps you do not recognize.',
+          '<span class="fix-platform">Android</span> Open <strong>Settings > Apps</strong> and sort by recently installed. Check for unfamiliar apps, especially those with generic icons (calculator, notepad).',
+          'Search for <strong>vault apps</strong> by looking for duplicate utility apps (two calculators, two notepads). Tap suspicious apps and check their App Store listing.',
+          'Set a <strong>monthly calendar reminder</strong> to do this review. It takes 5 minutes and is one of the most effective safety habits you can build.'
+        ]
+      }
+    },
+    {
+      q: "Is the web browser filtered or using safe search?",
+      why: "Without content filtering, a child is one search away from graphic violence, pornography, or extremist content. Safe search and DNS-level filtering catch the vast majority of harmful content before it ever loads, working across all browsers on the device.",
+      fix: {
+        title: "Enable web filtering and safe search",
+        steps: [
+          '<span class="fix-platform">iPhone</span> Go to <strong>Settings > Screen Time > Content & Privacy Restrictions > Content Restrictions > Web Content</strong>. Choose <strong>Limit Adult Websites</strong> or <strong>Allowed Websites Only</strong> for younger children.',
+          '<span class="fix-platform">Android</span> In <strong>Google Family Link > Controls > Content Restrictions > Google Chrome</strong>, select <strong>Try to block mature sites</strong>.',
+          'For home WiFi, change your router DNS to a family-safe provider: <strong>CleanBrowsing</strong> (185.228.168.168) or <strong>OpenDNS FamilyShield</strong> (208.67.222.123). This filters all devices on your network.',
+          'Lock <strong>SafeSearch</strong> on Google: go to google.com/preferences, turn on SafeSearch, and click "Lock SafeSearch" while signed into your parental Google account.'
+        ]
+      }
+    },
+    {
+      q: "Are notifications silenced during school hours?",
+      why: "Phone notifications during school are the top distraction teachers report. Even a single buzz triggers a context switch that takes an average of 23 minutes to recover from. Focus modes ensure the phone does not compete with learning.",
+      fix: {
+        title: "Set up school-hours focus mode",
+        steps: [
+          '<span class="fix-platform">iPhone</span> Go to <strong>Settings > Focus</strong>. Create a custom Focus called "School." Set it to silence all notifications except calls from family. Schedule it for school hours automatically.',
+          '<span class="fix-platform">Android</span> Go to <strong>Settings > Digital Wellbeing > Focus Mode</strong>. Select distracting apps to pause during school hours. Set a schedule so it activates automatically on weekdays.',
+          'Alternatively, use <strong>Screen Time Downtime</strong> (iPhone) or <strong>Family Link school time</strong> (Android) to lock the phone entirely during class hours, allowing only phone calls.',
+          'Talk with your child about <strong>why</strong> this matters: framing it as "helping you focus" rather than punishment increases cooperation.'
+        ]
+      }
+    },
+    {
+      q: "Do you know the passwords or PINs for your child's accounts?",
+      why: "Knowing account credentials is not about snooping; it is about having emergency access. If your child is being bullied, blackmailed, or contacted by a predator, you need the ability to step in immediately. Many serious situations escalate because a parent could not access the account in time.",
+      fix: {
+        title: "Establish shared account access",
+        steps: [
+          'Have an open conversation about <strong>why you need access</strong>: frame it as a safety net, not surveillance. Use the analogy of a spare house key.',
+          'Use a <strong>family password manager</strong> (Bitwarden, 1Password Families) where your child\'s accounts are stored. This avoids the awkwardness of repeatedly asking for passwords.',
+          'For <strong>younger children (under 13)</strong>, create accounts yourself using your email as the recovery email. This ensures you always have a reset path.',
+          'Agree on <strong>when you would access</strong> the accounts (safety concerns only) and put this in your family technology agreement. Trust goes both ways.'
+        ]
+      }
+    },
+    {
+      q: "Have you had a conversation about what to do if something uncomfortable happens online?",
+      why: "Technology settings are a safety net, but the most effective protection is a child who knows how to recognize danger and feels safe telling you about it. Kids who have had explicit conversations about online risks are significantly more likely to report concerning contact to a parent rather than hiding it.",
+      fix: {
+        title: "Have the safety conversation",
+        steps: [
+          'Start with <strong>open-ended questions</strong>: "Has anyone online ever made you feel weird or uncomfortable?" Listen without reacting with anger or panic.',
+          'Establish a <strong>no-blame policy</strong>: promise that if they come to you about something scary online, they will not lose their phone. Fear of punishment is the top reason kids hide problems.',
+          'Teach the <strong>Block-Report-Tell</strong> steps: Block the person, Report the content/account on the platform, Tell a trusted adult immediately.',
+          'Role-play <strong>specific scenarios</strong>: "What would you do if someone you don\'t know sends you a message?" "What if a friend asks you to download an app I haven\'t approved?" Practice builds confidence.',
+          'Revisit this conversation <strong>every few months</strong> as your child matures and encounters new platforms. What is relevant at age 10 is different from age 14.'
+        ]
+      }
+    }
+  ];
+
+  var answers = [];
+  var currentQuestion = 0;
+
+  function updateProgress(step) {
+    var pct = (step / questions.length) * 100;
+    var bar = document.getElementById('progressBar');
+    bar.style.width = pct + '%';
+    bar.parentElement.setAttribute('aria-valuenow', Math.round(pct));
+  }
+
+  function showScreen(id) {
+    var screens = document.querySelectorAll('.screen');
+    for (var i = 0; i < screens.length; i++) {
+      screens[i].classList.remove('active');
+    }
+    document.getElementById(id).classList.add('active');
+  }
+
+  function buildQuestions() {
+    var container = document.getElementById('questionContainer');
+    var html = '';
+    for (var i = 0; i < questions.length; i++) {
+      var q = questions[i];
+      html += '<div class="screen" id="q' + i + '">' +
+        '<div class="question-header">' +
+          '<span class="question-number">Question ' + (i + 1) + ' of ' + questions.length + '</span>' +
+        '</div>' +
+        '<h2 class="question-text">' + q.q + '</h2>' +
+        '<button class="why-toggle" onclick="toggleWhy(' + i + ')" aria-expanded="false" aria-controls="why' + i + '">' +
+          '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>' +
+          'Why this matters' +
+          '<span class="arrow">&#9660;</span>' +
+        '</button>' +
+        '<div class="why-explanation" id="why' + i + '" role="region">' + q.why + '</div>' +
+        '<div class="answer-buttons">' +
+          '<button class="answer-btn yes" onclick="answer(' + i + ', true)" aria-label="Yes">Yes</button>' +
+          '<button class="answer-btn no" onclick="answer(' + i + ', false)" aria-label="No">No</button>' +
+        '</div>' +
+      '</div>';
+    }
+    container.innerHTML = html;
+  }
+
+  window.toggleWhy = function(index) {
+    var el = document.getElementById('why' + index);
+    var btn = el.previousElementSibling;
+    var isOpen = el.classList.contains('visible');
+    el.classList.toggle('visible');
+    btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', !isOpen);
+  };
+
+  window.startAudit = function() {
+    answers = [];
+    currentQuestion = 0;
+    buildQuestions();
+    showScreen('q0');
+    updateProgress(0);
+    document.getElementById('startBtn').blur();
+  };
+
+  window.answer = function(index, isYes) {
+    answers[index] = isYes;
+    currentQuestion = index + 1;
+    updateProgress(currentQuestion);
+
+    if (currentQuestion < questions.length) {
+      showScreen('q' + currentQuestion);
+    } else {
+      showResults();
+    }
+  };
+
+  function showResults() {
+    var score = 0;
+    for (var i = 0; i < answers.length; i++) {
+      if (answers[i]) score++;
+    }
+
+    var level, label, subtitle, cls;
+    if (score <= 3) {
+      cls = 'score-critical';
+      label = 'Critical Risk';
+      subtitle = 'Your child\'s phone has significant safety gaps. The good news: every one of them is fixable today. Start with the fixes below.';
+    } else if (score <= 6) {
+      cls = 'score-needs-work';
+      label = 'Needs Work';
+      subtitle = 'You\'ve got some basics covered, but there are important gaps. The fixes below will get you to a much stronger position.';
+    } else if (score <= 9) {
+      cls = 'score-good';
+      label = 'Good Shape';
+      subtitle = 'You\'re ahead of most parents. A few tweaks below will close the remaining gaps.';
+    } else {
+      cls = 'score-perfect';
+      label = 'Fort Knox';
+      subtitle = 'Incredible. You\'ve covered every base. Your child is safer online than 99% of kids. Keep doing what you\'re doing.';
+    }
+
+    var html = '<div class="score-display ' + cls + '">' +
+      '<div class="score-circle" role="img" aria-label="Score: ' + score + ' out of 10">' +
+        '<span class="number">' + score + '</span>' +
+        '<span class="out-of">/ 10</span>' +
+      '</div>' +
+      '<div class="score-label">' + label + '</div>' +
+      '<p class="score-subtitle">' + subtitle + '</p>' +
+    '</div>';
+
+    // Build fix cards for "No" answers
+    var noAnswers = [];
+    for (var i = 0; i < answers.length; i++) {
+      if (!answers[i]) noAnswers.push(i);
+    }
+
+    if (noAnswers.length > 0) {
+      html += '<div class="fixes-section">' +
+        '<h3 class="fixes-title">Your personalized fix-it list (' + noAnswers.length + ' item' + (noAnswers.length > 1 ? 's' : '') + ')</h3>';
+
+      for (var j = 0; j < noAnswers.length; j++) {
+        var idx = noAnswers[j];
+        var q = questions[idx];
+        html += '<div class="fix-card" onclick="toggleFix(this)">' +
+          '<div class="fix-card-header">' +
+            '<div class="fix-icon">!</div>' +
+            '<div class="fix-question">' + q.fix.title + '</div>' +
+            '<div class="fix-expand">&#9660;</div>' +
+          '</div>' +
+          '<div class="fix-steps"><ol>';
+        for (var k = 0; k < q.fix.steps.length; k++) {
+          html += '<li>' + q.fix.steps[k] + '</li>';
+        }
+        html += '</ol></div></div>';
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="all-good-msg"><p>You answered Yes to every question. Outstanding work protecting your family online.</p></div>';
+    }
+
+    // Action buttons
+    var shareText = 'I scored ' + score + '/10 on the Phone Safety Audit from @SafeScreenFamily. How safe is YOUR kid\'s phone? Take the free 2-minute audit:';
+    var shareUrl = 'https://safescreenfamily.com/tools/phone-safety-audit.html';
+
+    html += '<div class="action-buttons">' +
+      '<a href="/safescreenfamily/products/digital-safety-kit/" class="btn btn-primary">' +
+        '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' +
+        'Get the Full Digital Safety Starter Kit' +
+      '</a>' +
+      '<button class="btn btn-share" onclick="shareScore(\'' + shareText.replace(/'/g, "\\'") + '\', \'' + shareUrl + '\')">' +
+        '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>' +
+        'Share Your Score' +
+      '</button>' +
+      '<button class="btn btn-restart" onclick="restart()">Take the audit again</button>' +
+    '</div>';
+
+    var resultsScreen = document.getElementById('resultsScreen');
+    resultsScreen.innerHTML = html;
+    showScreen('resultsScreen');
+
+    // Auto-open first fix card
+    var firstCard = resultsScreen.querySelector('.fix-card');
+    if (firstCard) firstCard.classList.add('open');
+  }
+
+  window.toggleFix = function(card) {
+    card.classList.toggle('open');
+  };
+
+  window.shareScore = function(text, url) {
+    var full = text + ' ' + url;
+
+    // Try Web Share API first (mobile)
+    if (navigator.share) {
+      navigator.share({ text: text, url: url }).catch(function() {});
+      return;
+    }
+
+    // Fallback: copy to clipboard
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(full).then(function() {
+        showToast();
+      }).catch(function() {
+        fallbackCopy(full);
+      });
+    } else {
+      fallbackCopy(full);
+    }
+  };
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast();
+    } catch (e) {
+      window.prompt('Copy this text to share:', text);
+    }
+    document.body.removeChild(ta);
+  }
+
+  function showToast() {
+    var toast = document.getElementById('copiedToast');
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2200);
+  }
+
+  window.restart = function() {
+    answers = [];
+    currentQuestion = 0;
+    updateProgress(0);
+    showScreen('introScreen');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Build on load
+  buildQuestions();
+})();
+</script>
+</body>
+</html>
